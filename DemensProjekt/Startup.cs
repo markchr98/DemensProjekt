@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemensProjekt.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -30,6 +33,22 @@ namespace DemensProjekt
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDbContext<IdentityDataContext>(options =>
+            {
+                //enter connection string (use onfiguration.GetconnectionString at some point (see lynda))
+                var connectionString = "HejIdentity";
+                options.UseSqlServer(connectionString);
+            });
+
+            services.AddDbContext<BlogDataContext>(options =>
+            {
+                //enter connection string (use configuration.GetConnectionString at some point (see lynda))
+                var connectionString = "Hej";
+                options.UseSqlServer(connectionString);
+            });
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityDataContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -48,6 +67,8 @@ namespace DemensProjekt
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseIdentity();
 
             app.UseMvc(routes =>
             {
