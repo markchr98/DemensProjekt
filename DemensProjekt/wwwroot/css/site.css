@@ -51,11 +51,13 @@ blockquote, q {
     }
 
 a {
+    text-decoration: none;
     margin: 0;
     padding: 0;
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+    font-style: normal;
 }
 
 /* change colours to suit your needs */
@@ -102,3 +104,33 @@ input, select {
 }
 
 /*MY CODE*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#MainNav {
+    
+    
+}
+
+#MainNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+#MainNav ul li {
+    float: left;
+    display: inline;
+    padding: 10px 10px;
+    
+}
+
+    #MainNav ul li a {
+        text-align: center;
+        display: block;
+        color: #0ba2db;
+    }
+
+#Login {
+}

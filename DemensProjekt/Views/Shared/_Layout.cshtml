@@ -1,1 +1,22 @@
-﻿
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/site.css"/>
+</head>
+<body>
+    <nav id="MainNav">
+        <ul>
+            <li><a href="@Url.Action("Index", "Home")">Startside</a></li>
+            <li><a href="@Url.Action("Index", "News")">Nyheder</a></li>
+            <li><a href="@Url.Action("Index", "Forum")">Forum</a></li>
+            <li id="Login"><a href="@Url.Action("Index", "Login")">Log Ind</a></li>
+        </ul>
+    </nav>
+    <div class="MarginDiv">
+        @RenderBody()
+    </div>
+    
+</body>
+</html>
