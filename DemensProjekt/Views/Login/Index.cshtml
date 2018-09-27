@@ -5,23 +5,30 @@
 
 <div id="logincontainer">
     <div class="coloumn">
-        <h2>Log ind</h2>
-        <form>
-            <input class ="forminput" />
-            <input class="forminput" />
-            <input type="checkbox" />
-            <button class="btnlogin">Login</button>
-        </form>
+        <div class="formcontainer">
+            <h2>Log Ind</h2>
+            <form>
+                <input placeholder="Brugernavn"/>
+                <input  type="password" placeholder="Kodeord" />
+                <div>
+                    <p>Husk mig</p>
+                    <input type="checkbox" />
+                </div>
+                <button type="submit" class="btnlogin">Login</button>
+            </form>
+        </div>
     </div>
     <div class="vl"></div>
     <div class="coloumn">
-        <h2>Opret Bruger</h2>
+        <div class="formcontainer">
+        <h2>Opret Bruger</h2>        
         <form>
-            <input class="forminput" />
-            <input class="forminput" />
-            <input class="forminput" />
-            <input class="forminput" />            
-            <button class="btnlogin">Login</button>
+            <input placeholder="Email" />
+            <input  placeholder="Brugernavn"/>
+            <input placeholder="Adgangskode"/>
+            <input placeholder="Gentag Adgangskode"/>            
+            <button type="submit" class="btnopret">Opret</button>            
         </form>
+        </div>
     </div>
 </div>
