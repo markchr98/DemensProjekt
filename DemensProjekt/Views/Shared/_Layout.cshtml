@@ -1,22 +1,97 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg {
+            position: relative;
+        }
+
+        .bg content {
+            vertical-align: middle;
+        }
+
+        .bg .content {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0); /* Fallback color */
+            background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("/images/notebook.jpg");
+            /* Full height */
+            height: 20%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-    <nav id="MainNav">
+    <nav class="topnav">
         <ul>
-            <li><a href="@Url.Action("Index", "Home")">Startside</a></li>
-            <li><a href="@Url.Action("Index", "News")">Nyheder</a></li>
-            <li><a href="@Url.Action("Index", "Forum")">Forum</a></li>
-            <li id="Login"><a href="@Url.Action("Index", "Login")">Log Ind</a></li>
+            <li><a class="active" href="@Url.Action("Index", "Home")"><i class="fa fa-fw fa-home"></i>Startside</a></li>
+            <li><a href="@Url.Action("Index", "News")"><i class="fa fa-newspaper-o"></i> Nyheder</a></li>
+            <li><a href="@Url.Action("Index", "Forum")"><i class="glyphicon glyphicon-pencil"></i> Forum</a></li>
+            <li id="Login"><a href="@Url.Action("Index", "Login")"><i class="fa fa-fw fa-user"></i>Log Ind</a></li>
         </ul>
     </nav>
     <div class="MarginDiv">
         @RenderBody()
     </div>
-    
+    <div class="bg">
+        <div class="content">
+            <h4 style="margin-bottom:0px;">Velkommen!</h4>
+            <p>Demens Gruppen</p>
+        </div>
+    </div>
 </body>
 </html>
