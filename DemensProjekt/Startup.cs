@@ -36,14 +36,14 @@ namespace DemensProjekt
             services.AddDbContext<IdentityDataContext>(options =>
             {
                 //enter connection string (use onfiguration.GetconnectionString at some point (see lynda))
-                var connectionString = "HejIdentity";
+                var connectionString = @"Server = EALSQL1.eal.local; Database = DB2017_A09; User Id = USER_A09; Password = SesamLukOp_09; ";
                 options.UseSqlServer(connectionString);
             });
 
             services.AddDbContext<BlogDataContext>(options =>
             {
                 //enter connection string (use configuration.GetConnectionString at some point (see lynda))
-                var connectionString = "Hej";
+                var connectionString = @"Server = EALSQL1.eal.local; Database = DB2017_A09; User Id = USER_A09; Password = SesamLukOp_09; ";
                 options.UseSqlServer(connectionString);
             });
 
