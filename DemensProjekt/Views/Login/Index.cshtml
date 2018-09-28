@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DemensProjekt.Models.Account.RegisterViewModel
+@{
     ViewBag.Title = "Logind eller opret en bruger";
     Layout = "_Layout";
 }
@@ -7,7 +8,7 @@
     <div class="coloumn">
         <div class="formcontainer">
             <h2>Log Ind</h2>
-            <form>
+            <form >
                 <input placeholder="Brugernavn"/>
                 <input  type="password" placeholder="Kodeord" />
                 <div>
@@ -22,11 +23,11 @@
     <div class="coloumn">
         <div class="formcontainer">
         <h2>Opret Bruger</h2>        
-        <form>
-            <input placeholder="Email" />
-            <input  placeholder="Brugernavn"/>
-            <input placeholder="Adgangskode"/>
-            <input placeholder="Gentag Adgangskode"/>            
+        <form role="form" asp-action="Register">
+            <input placeholder="Email" type="email" asp-for="EmailAddress"/>
+            <input  placeholder="Brugernavn" asp-for="Username"/>
+            <input placeholder="Adgangskode" type="password" asp-for="Password"/>
+            <input placeholder="Gentag Adgangskode" type="password" asp-for="ConfirmPassword"/>            
             <button type="submit" class="btnopret">Opret</button>            
         </form>
         </div>
