@@ -106,10 +106,10 @@ input, select {
 /*MY CODE*/
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-#MainNav {
+/*#MainNav {
     
     
-}
+}*/
 
 #MainNav ul {
     list-style-type: none;
@@ -119,12 +119,11 @@ input, select {
     
 }
 
-#MainNav ul li {
-    float: left;
-    display: inline;
-    padding: 10px 10px;
-    
-}
+    #MainNav ul li {
+        float: left;
+        /*display: inline;*/
+        padding: 10px 10px;
+    }
 
     #MainNav ul li a {
         text-align: center;
@@ -206,4 +205,7 @@ input[type=text] {
     float: left;
 }
 
+.input-validation-error {
+    box-shadow: #cb202a 1px;
+}
 

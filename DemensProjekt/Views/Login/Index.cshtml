@@ -23,12 +23,22 @@
     <div class="coloumn">
         <div class="formcontainer">
         <h2>Opret Bruger</h2>        
-        <form role="form" asp-action="Register">
-            <input placeholder="Email" type="email" asp-for="EmailAddress"/>
-            <input  placeholder="Brugernavn" asp-for="Username"/>
-            <input placeholder="Adgangskode" type="password" asp-for="Password"/>
-            <input placeholder="Gentag Adgangskode" type="password" asp-for="ConfirmPassword"/>            
-            <button type="submit" class="btnopret">Opret</button>            
+        <form role="form" asp-action="Register" asp-controller="Login">
+            <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
+
+            <input placeholder="Email" type="email" asp-for="EmailAddress" />
+            <span asp-validation-for="EmailAddress"></span>
+
+            <input placeholder="Brugernavn" asp-for="Username" />
+            <span asp-validation-for="Username"></span>
+
+            <input placeholder="Adgangskode" type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+
+            <input placeholder="Gentag Adgangskode" type="password" asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword"></span>
+
+            <button type="submit" class="btnopret">Opret</button>
         </form>
         </div>
     </div>
