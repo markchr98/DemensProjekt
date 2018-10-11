@@ -1,37 +1,249 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
+﻿/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    line-height: 1;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    nav ul {
+        list-style: none;
     }
+
+blockquote, q {
+    quotes: none;
 }
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-style: normal;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+/*MY CODE*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*#MainNav {
+    
+    
+}*/
+
+#MainNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+    #MainNav ul li {
+        float: left;
+        /*display: inline;*/
+        padding: 10px 10px;
+    }
+
+    #MainNav ul li a {
+        text-align: center;
+        display: block;
+        color: #0ba2db;
+    }
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    text-decoration: none;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.coloumn {
+    float: left;
+    width: 50%;   
+}
+
+.coloumn h2 {
+    margin: 0 0 50px 0;
+    font-size: 50px;
+    color: #0ba2db;
+}
+
+.vl {
+    height: 500px;
+    float: left;
+    border-left: 2px solid black;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.formcontainer {
+    background-color: #cce9f0;
+    padding: 10%;
+}
+
+
+input {
+    margin:0 0 30px 0;
+    height: 30px;
+    width: 50%;
+    border: 1px solid #0ba2db;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+input[type=text] {
+    padding: 5px 5px;
+}
+
+.btnlogin {
+    float: left;
+}
+
+.dropDButton {
+	background-color: aquamarine;
+	color: black;
+	padding: 16px;
+	font-size: 20px;
+	border: none;
+}
+
+#DropDownMenu {
+	position: relative;
+	display: inline-block;
+}
+
+.drop-content {
+	display: none;
+	position: absolute;
+	background-color: ghostwhite;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.drop-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+}
+
+.drop-content a:hover {
+			background-color: orange;
+}
+
+#DropDownMenu:hover .drop-content {
+	display: block;
+}
+
+#DropDownMenu:hover .dropDButton {
+	background-color: orange;
+}
+
+
