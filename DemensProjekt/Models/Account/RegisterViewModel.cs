@@ -9,21 +9,16 @@ namespace DemensProjekt.Models.Account
     public class RegisterViewModel
     {
         [Required]
-        [EmailAddress]
-        [StringLength(100, MinimumLength = 1, ErrorMessage = "Angiv venligst e-mail")]
+        [EmailAddress, MaxLength(500)]
+        [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 1, ErrorMessage = "Angiv venligst brugernavn")]
-        public string Username { get; set; }
-
-        [Required]
         [DataType(DataType.Password)]
-        [StringLength(100, MinimumLength = 1, ErrorMessage = "Angiv venligst adgangskode")]
         public string Password { get; set; }
 
-        [Compare("Password", ErrorMessage = "Adgangskode skal være identisk")]
-        [Display(Name = "Bekræft Adgangskode")]
+        [Compare("Password", ErrorMessage = "Passwords must match")]
+        [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
     }
 }
