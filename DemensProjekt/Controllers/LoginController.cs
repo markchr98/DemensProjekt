@@ -42,15 +42,24 @@ namespace DemensProjekt.Controllers
             }
 
             return Redirect("/Forum");
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> Logout(string returnUrl = null)
+        {
+            await _signInManager.SignOutAsync();
 
+            if (string.IsNullOrWhiteSpace(returnUrl))
+                return RedirectToAction("Index", "Home");
+
+            return Redirect(returnUrl);
         }
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel registration)
         {
             if (!ModelState.IsValid)
-                return View("Index",registration);
+                return View("Index", registration);
 
             var newUser = new IdentityUser()
             {
@@ -69,12 +78,7 @@ namespace DemensProjekt.Controllers
 
                 return View();
             }
-
             return RedirectToAction("Index");
-
-        
         }
-        
-        
     }
 }

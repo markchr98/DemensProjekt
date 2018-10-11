@@ -106,10 +106,10 @@ input, select {
 /*MY CODE*/
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-#MainNav {
+/*#MainNav {
     
     
-}
+}*/
 
 #MainNav ul {
     list-style-type: none;
@@ -119,12 +119,11 @@ input, select {
     
 }
 
-#MainNav ul li {
-    float: left;
-    display: inline;
-    padding: 10px 10px;
-    
-}
+    #MainNav ul li {
+        float: left;
+        /*display: inline;*/
+        padding: 10px 10px;
+    }
 
     #MainNav ul li a {
         text-align: center;
@@ -204,6 +203,47 @@ input[type=text] {
 
 .btnlogin {
     float: left;
+}
+
+.dropDButton {
+	background-color: aquamarine;
+	color: black;
+	padding: 16px;
+	font-size: 20px;
+	border: none;
+}
+
+#DropDownMenu {
+	position: relative;
+	display: inline-block;
+}
+
+.drop-content {
+	display: none;
+	position: absolute;
+	background-color: ghostwhite;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.drop-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+}
+
+.drop-content a:hover {
+			background-color: orange;
+}
+
+#DropDownMenu:hover .drop-content {
+	display: block;
+}
+
+#DropDownMenu:hover .dropDButton {
+	background-color: orange;
 }
 
 

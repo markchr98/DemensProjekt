@@ -14,8 +14,5 @@ namespace DemensProjekt.Models
         {
             Database.EnsureCreated();
         }
-
-
-
     }
 }
