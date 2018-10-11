@@ -68,7 +68,8 @@ namespace DemensProjekt
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseIdentity();
+            //app.UseIdentity();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
