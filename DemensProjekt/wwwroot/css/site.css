@@ -262,7 +262,8 @@ input[type=text] {
 
 .HorizontalLine {
 	background-color: #0ba2db;
-
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 
