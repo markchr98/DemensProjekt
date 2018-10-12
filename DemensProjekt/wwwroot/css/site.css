@@ -277,4 +277,11 @@ input[type=text] {
 	margin-right: 20px;
 }
 
-
+.FrontPic {
+	border-radius: 8px;
+	width: 50%;
+	height: auto;
+	overflow: hidden;
+	margin-left: 25%;
+	
+}
