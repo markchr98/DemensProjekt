@@ -256,8 +256,9 @@ input[type=text] {
 	padding: 20px;
 }
 #FrontHeadline {
-    padding: 0px 0px 0px 400px;
+    text-align: center;
     font-family: Calibri;
+    font-size: 80px;
 }
 #InfoHeadline {
     font-size: 40px;
