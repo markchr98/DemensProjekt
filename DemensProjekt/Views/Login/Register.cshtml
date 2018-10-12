@@ -2,38 +2,21 @@
 @model DemensProjekt.Models.Account.RegisterViewModel
 
 
-<fieldset class="account">
-
-    <h1>New User Registration</h1>
-
-    <br />
-
-    <form role="form" asp-action="Register">
-        <div asp-validation-summary="All" class="input-validation-error"></div>
-
-        <div class="form-group">
-            <label asp-for="EmailAddress"></label>
-            <input type="email" asp-for="EmailAddress" class="form-control" />
-            <span asp-validation-for="EmailAddress" class="field-validation-error"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Password"></label>
-            <input type="password" asp-for="Password" class="form-control" />
-            <span asp-validation-for="Password" class="field-validation-error"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="ConfirmPassword"></label>
-            <input type="password" asp-for="ConfirmPassword" class="form-control" />
-            <span asp-validation-for="ConfirmPassword" class="field-validation-error"></span>
-        </div>
-        <br />
-        <div>
-            <label>&nbsp;</label>
-            <button type="submit" class="btn btn-primary">Create new user</button>
-        </div>
-
+<div class="formcontainer">
+    <h2>Opret Bruger</h2>
+    <form method="post" role="form" asp-action="Register">
+        <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
+        <input placeholder="Email" type="email" asp-for="EmailAddress" />
+        <span asp-validation-for="EmailAddress"></span>
+        <input placeholder="Brugernavn" asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+        <input placeholder="Adgangskode" type="password" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+        <input placeholder="Gentag Adgangskode" type="password" asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword"></span>
+        @*<button type="submit" class="btnopret">Opret</button>*@
+        <input type="submit" class="btnopret" />
     </form>
-</fieldset>
+</div>
+
 

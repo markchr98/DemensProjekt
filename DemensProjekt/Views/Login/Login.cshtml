@@ -2,49 +2,15 @@
 @model DemensProjekt.Models.Account.LoginViewModel
 
 
-<fieldset class="account">
-
-    <h1>Login</h1>
-    <br />
-    <form role="form" asp-action="Login">
-
-        <div asp-validation-summary="All" class="input-validation-error"></div>
-
-        <div class="form-group">
-            <label asp-for="EmailAddress"></label>
-            <input type="email" asp-for="EmailAddress" class="form-control" />
-            <span asp-validation-for="EmailAddress" class="field-validation-error"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Password"></label>
-            <input type="password" asp-for="Password" class="form-control" />
-            <span asp-validation-for="Password" class="field-validation-error"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="ConfirmPassword"></label>
-            <input type="password" asp-for="ConfirmPassword" class="form-control" />
-            <span asp-validation-for="ConfirmPassword" class="field-validation-error"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="RememberMe"></label>
-            <input type="checkbox" asp-for="RememberMe" />
-            <span asp-validation-for="RememberMe" class="field-validation-error"></span>
-        </div>
+<div class="formcontainer">
+    <h2>Log Ind</h2>
+    <form method="post" role="form" asp-action="Login" >
+        <input placeholder="Brugernavn"/>
+        <input type="password" placeholder="Kodeord" />
         <div>
-            <label>&nbsp;</label>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <p>Husk mig</p>
+            <input type="checkbox" />
         </div>
-
+        <button type="submit" class="btnlogin">Login</button>
     </form>
-
-    <br />
-
-    <div class="form-group">
-        <label>Not Registered?</label>
-        <a asp-action="Register">Create a new account</a>
-    </div>
-
-</fieldset>
+</div>

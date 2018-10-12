@@ -15,11 +15,7 @@ namespace DemensProjekt.Models.Account
 
         [Required]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
-
-        [Compare("Password", ErrorMessage = "Passwords must match")]
-        [Display(Name = "Confirm Password")]
-        public string ConfirmPassword { get; set; }
+        public string Password { get; set; }       
 
         [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }

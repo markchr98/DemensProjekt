@@ -21,6 +21,11 @@ namespace DemensProjekt.Controllers
             _signInManager = signInManager;
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult Login()
         {
             return View(new LoginViewModel());

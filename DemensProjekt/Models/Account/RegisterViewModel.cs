@@ -14,6 +14,10 @@ namespace DemensProjekt.Models.Account
         public string EmailAddress { get; set; }
 
         [Required]
+        [StringLength(100, MinimumLength = 1, ErrorMessage = "Angiv venligst brugernavn")]
+        public string Username { get; set; }
+
+        [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
