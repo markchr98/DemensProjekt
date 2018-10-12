@@ -256,7 +256,8 @@ input[type=text] {
 	padding: 20px;
 }
 #FrontHeadline {
-    padding: 20px;
+    padding: 0px 0px 0px 400px;
+    font-family: Calibri;
 }
 
 
