@@ -47,7 +47,9 @@ namespace DemensProjekt
                 options.UseSqlServer(connectionString);
             });
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>(o => {
+                o.Password.RequireNonAlphanumeric = false;
+            })
                 .AddEntityFrameworkStores<IdentityDataContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

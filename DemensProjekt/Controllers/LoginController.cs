@@ -25,18 +25,14 @@ namespace DemensProjekt.Controllers
         {
             return View();
         }
-
-        public IActionResult Login()
-        {
-            return View(new LoginViewModel());
-        }
+                
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel login, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginViewModel login)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return PartialView("Index");
             }
 
             var result = await _signInManager.PasswordSignInAsync(
@@ -45,13 +41,10 @@ namespace DemensProjekt.Controllers
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Login error!");
-                return View();
+                return View("Index");
             }
 
-            if (string.IsNullOrWhiteSpace(returnUrl))
-                return RedirectToAction("Index", "Home");
-
-            return Redirect(returnUrl);
+            return RedirectToAction("Index","Home");
         }
 
         [HttpPost]
@@ -66,10 +59,7 @@ namespace DemensProjekt.Controllers
 
             return Redirect(returnUrl);
         }
-        public IActionResult Register()
-        {
-            return View(new RegisterViewModel());
-        }
+        
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel registration)
@@ -92,9 +82,9 @@ namespace DemensProjekt.Controllers
                     ModelState.AddModelError("", error);
                 }
 
-                return View();
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
         }
     }
 }
