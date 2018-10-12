@@ -246,4 +246,14 @@ input[type=text] {
 	background-color: orange;
 }
 
+#FrontHeadline {
+	font-size: 50px;
+	color: #0ba2db;
+	font: arial;
+}
+
+.FrontP {
+	padding: 20px;
+}
+
 
