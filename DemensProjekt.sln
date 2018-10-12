@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemensProjekt", "DemensProjekt\DemensProjekt.csproj", "{F3D549CE-ED4D-4FBA-A91B-E2C4D320DBE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProj", "TestProj\TestProj.csproj", "{81489C28-8426-4AEC-B40F-9BF5C393007C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProj", "TestProj\TestProj.csproj", "{81489C28-8426-4AEC-B40F-9BF5C393007C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

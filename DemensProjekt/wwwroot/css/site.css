@@ -135,7 +135,7 @@ input, select {
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: #115586;
     overflow: hidden;
 }
 
@@ -157,10 +157,10 @@ input, select {
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
+    .topnav a.active {
+        background-color: #115586;
+        color: white;
+    }
 
 .coloumn {
     float: left;
@@ -254,6 +254,10 @@ input[type=text] {
 
 .FrontP {
 	padding: 20px;
+}
+#FrontHeadline {
+    padding: 0px 0px 0px 400px;
+    font-family: Calibri;
 }
 
 .HorizontalLine {
