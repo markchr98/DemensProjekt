@@ -12,7 +12,19 @@
             <li><a class="active" href="@Url.Action("Index", "Home")"><i class="fa fa-fw fa-home"></i>Startside</a></li>
             <li><a href="@Url.Action("Index", "News")"><i class="fa fa-newspaper-o"></i> Nyheder</a></li>
             <li><a href="@Url.Action("Index", "Forum")"><i class="glyphicon glyphicon-pencil"></i> Forum</a></li>
-            <li id="Login"><a href="@Url.Action("Index", "Login")"><i class="fa fa-fw fa-user"></i>Log ind</a></li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form id="logout" action="@Url.Action("Logout", "Account")" method="POST">
+                    <a href="javascript: $('#logout').submit()" class="last">
+                        Logout
+                        <br /><span class="tagline">@User.Identity.Name</span>
+                    </a>
+                </form>
+            }
+            else
+            {
+                <li id="Login"><a href="@Url.Action("Login", "Login")"><i class="fa fa-fw fa-user"></i>Log Ind</a></li>
+            }
             <li id="Info"><a href="@Url.Action("Index", "Info")"><i class="fa fa-fw fa-user"></i>Info</a></li>
         </ul>
     </nav>
