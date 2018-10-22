@@ -14,7 +14,7 @@
             <li><a href="@Url.Action("Index", "Forum")"><i class="glyphicon glyphicon-pencil"></i> Forum</a></li>
             @if (User.Identity.IsAuthenticated)
             {
-                <form id="logout" action="@Url.Action("Logout", "Account")" method="POST">
+                <form id="logout" action="@Url.Action("Logout", "Login")" method="POST">
                     <a href="javascript: $('#logout').submit()" class="last">
                         Logout
                         <br /><span class="tagline">@User.Identity.Name</span>

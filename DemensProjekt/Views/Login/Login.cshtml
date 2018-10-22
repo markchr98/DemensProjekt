@@ -5,11 +5,11 @@
 <div class="formcontainer">
     <h2>Log ind</h2>
     <form method="post" role="form" asp-action="Login" >
-        <input placeholder="Brugernavn"/>
-        <input type="password" placeholder="Kodeord" />
+        <input placeholder="E-mail Adresse" asp-for="EmailAddress"/>
+        <input type="password" placeholder="Kodeord" asp-for="Password" />
         <div>
             <p>Husk mig</p>
-            <input type="checkbox" />
+            <input type="checkbox" asp-for="RememberMe"/>
         </div>
         <button type="submit" class="btnlogin">Login</button>
     </form>
