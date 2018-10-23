@@ -43,7 +43,7 @@ namespace DemensProjekt
             services.AddDbContext<BlogDataContext>(options =>
             {
                 //enter connection string (use configuration.GetConnectionString at some point (see lynda))
-                var connectionString = @"Server = EALSQL1.eal.local; Database = DB2017_A09; User Id = USER_A09; Password = SesamLukOp_09; ";
+                var connectionString = @"Server = den1.mssql3.gear.host; Database = demensprojekt18; User Id = demensprojekt18; Password = Ky370-3zH~tD; ";
                 options.UseSqlServer(connectionString);
             });
 
