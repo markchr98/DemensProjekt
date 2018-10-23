@@ -12,6 +12,8 @@ namespace DemensProjekt.Models
         
         public long PostId { get; set; }
 
+        public long PostId { get; set; }
+
         public DateTime Posted { get; set; }
 
         public string Author { get; set; }

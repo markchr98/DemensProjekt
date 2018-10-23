@@ -43,22 +43,14 @@ namespace DemensProjekt.Controllers
             return View(posts);
         }
 
-        [Route("{year:min(2000)}/{month:range(1,12)}/{key}")]
-        public IActionResult Post(int year, int month, string key)
-        {
-            var post = _db.Posts.FirstOrDefault(x => x.Key == key);
-
-            return View(post);
-        }
-
         [HttpGet, Route("create")]
-        public IActionResult Create()
+        public IActionResult CreatePost()
         {
             return View();
         }
 
         [HttpPost, Route("create")]
-        public IActionResult Create(Post post)
+        public IActionResult CreatePost(Post post)
         {
             if (!ModelState.IsValid)
                 return View();
@@ -66,10 +58,39 @@ namespace DemensProjekt.Controllers
             post.Author = User.Identity.Name;
             post.Posted = DateTime.Now;
 
-            return RedirectToAction("Post", "Blog", new
+
+            _db.Posts.Add(post);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index", "Forum", new
             {
                 year = post.Posted.Year,
-                month = post.Posted.Month                
+                month = post.Posted.Month        
+            });
+        }
+
+        [HttpGet, Route("create")]
+        public IActionResult CreateComment()
+        {
+            return View();
+        }
+
+        [HttpPost, Route("create")]
+        public IActionResult CreateComment(Comment comment)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            comment.Author = User.Identity.Name;
+            comment.Posted = DateTime.Now;
+
+            _db.Comments.Add(comment);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index", "Forum", new
+            {
+                year = comment.Posted.Year,
+                month = comment.Posted.Month
             });
         }
     }
