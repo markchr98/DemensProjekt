@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemensProjekt.Migrations.ForumData
 {
     [DbContext(typeof(ForumDataContext))]
-    [Migration("20181023074609_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20181023094851_ForumMigration")]
+    partial class ForumMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,8 @@ namespace DemensProjekt.Migrations.ForumData
                     b.Property<string>("Body")
                         .IsRequired();
 
+                    b.Property<long>("PostId");
+
                     b.Property<DateTime>("Posted");
 
                     b.HasKey("Id");
@@ -49,8 +51,6 @@ namespace DemensProjekt.Migrations.ForumData
 
                     b.Property<string>("Body")
                         .IsRequired();
-
-                    b.Property<string>("Key");
 
                     b.Property<DateTime>("Posted");
 

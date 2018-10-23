@@ -30,6 +30,8 @@ namespace DemensProjekt.Migrations.ForumData
                     b.Property<string>("Body")
                         .IsRequired();
 
+                    b.Property<long>("PostId");
+
                     b.Property<DateTime>("Posted");
 
                     b.HasKey("Id");
@@ -47,8 +49,6 @@ namespace DemensProjekt.Migrations.ForumData
 
                     b.Property<string>("Body")
                         .IsRequired();
-
-                    b.Property<string>("Key");
 
                     b.Property<DateTime>("Posted");
 

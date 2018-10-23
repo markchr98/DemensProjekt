@@ -7,7 +7,7 @@
 }
 
 <article class="forum-post">
-    <h1>@Html.ActionLink(Model.Title, "_Post", "Shared", new { year = Model.Posted.Year, month = Model.Posted.Month })</h1>
+    <h1>@Html.ActionLink(Model.Title, "Post", "Forum", new { year = Model.Posted.Year, month = Model.Posted.Month })</h1>
     <div class="details">
         Posted <span>@Format.AsReadableDate(Model.Posted)</span> by <span>@Model.Author</span>
     </div>
@@ -24,12 +24,7 @@
         <div>
             <a href="#" class="add-comment">Tilføj en kommentar</a>
             <div class="new-comment hide">
-                <form role="form">
-                    <div class="form-group">
-                        <textarea name="Body" class="new-comment form-control" placeholder="Skriv kommentar her..."></textarea>
-                        <button type="submit" class="btn btn-default">Tilføj</button>
-                    </div>
-                </form>
+                
             </div>
         </div>
     </div>
