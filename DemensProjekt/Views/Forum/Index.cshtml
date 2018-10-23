@@ -3,8 +3,10 @@
 
 @{
     ViewBag.Title = "Se og lav Indlæg";
-    
+
 }
+
+<partial name="_CreatePost" model="@new DemensProjekt.Models.Post()"/>
 
 <h1>Opslag</h1>
 
@@ -15,14 +17,14 @@
 <p class="pager">
     @if (ViewBag.HasPreviousPage)
     {
-        <a class="prev" href="@Url.Action("Index", "Blog", new { page = ViewBag.PreviousPage })">
+        <a class="prev" href="@Url.Action("Index", "Forum", new { page = ViewBag.PreviousPage })">
             &lt; Previous
         </a>
     }
 
     @if (ViewBag.HasNextPage)
     {
-        <a class="next" href="@Url.Action("Index", "Blog", new { page = ViewBag.NextPage })">
+        <a class="next" href="@Url.Action("Index", "Forum", new { page = ViewBag.NextPage })">
             Next &gt;
         </a>
     }
@@ -31,6 +33,6 @@
 <div class="blog-posts">
     @foreach (var post in Model)
     {
-        @Html.Partial("_Post", post)
+        <partial name="_Post" model="@post"/>
     }
 </div>

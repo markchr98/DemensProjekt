@@ -1,0 +1,21 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model DemensProjekt.Models.Comment
+@{
+    
+}
+
+<form asp-action="CreateComment" asp-controller="Forum">
+    <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
+
+
+    <div>
+        <label asp-for="Body"></label>
+        <textarea asp-for="Body" class="form-control" placeholder="Blog post content"></textarea>
+        <span asp-validation-for="Body"></span>
+    </div>
+
+    <button type="submit">Opret Kommentar</button>
+
+</form>
+
+
