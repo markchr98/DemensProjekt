@@ -11,6 +11,24 @@ namespace DemensProjekt.Models
     {        
         public long Id { get; set; }
 
+        private string _key;
+
+        public string Key
+        {
+            get
+            {
+                if (_key == null)
+                {
+                    _key = Regex.Replace(Title.ToLower(), "[^a-z0-9]", "-");
+                }
+                return _key;
+            }
+            set
+            {
+                _key = value;
+            }
+        }
+
         [Display(Name = "Titel")]
         [Required]
         [DataType(DataType.Text)]
