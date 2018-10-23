@@ -10,11 +10,12 @@ namespace DemensProjekt.Controllers
     [Route("forum")]
     public class ForumController : Controller
     {
-        private readonly BlogDataContext _db;
-        public ForumController(BlogDataContext db)
+        private readonly ForumDataContext _db;
+        public ForumController(ForumDataContext db)
         {
             _db = db;
         }
+
         [Route("")]
         public IActionResult Index(int page = 0)
         {

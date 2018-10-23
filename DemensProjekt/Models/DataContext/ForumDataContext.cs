@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DemensProjekt.Models
 {
-    public class BlogDataContext : DbContext
+    public class ForumDataContext : DbContext
     {
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Post> Posts { get; set; }
 
-        public BlogDataContext(DbContextOptions<BlogDataContext> options) : base(options)
+        public ForumDataContext(DbContextOptions<ForumDataContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
