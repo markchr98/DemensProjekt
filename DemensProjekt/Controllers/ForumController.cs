@@ -43,6 +43,14 @@ namespace DemensProjekt.Controllers
             return View(posts);
         }
 
+        [Route("{year:min(2000)}/{month:range(1,12)}/{key}")]
+        public IActionResult Post(int year, int month, string key)
+        {
+            var post = _db.Posts.FirstOrDefault(x => x.Key == key);
+
+            return View(post);
+        }
+
         [HttpGet, Route("create")]
         public IActionResult Create()
         {
