@@ -1,8 +1,9 @@
-﻿@inject DemensProjekt.Models.FormattingService Format
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@inject DemensProjekt.Models.FormattingService Format
 @model DemensProjekt.Models.Post
 
 @{
-    
+
 }
 
 <article class="blog-post">
@@ -33,3 +34,5 @@
         </div>
     </div>
 </article>
+
+<partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() { PostId = Model.Id}" />
