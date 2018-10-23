@@ -23,11 +23,11 @@
         <hr />
         <div>
             <a href="#" class="add-comment">Tilføj en kommentar</a>
+            
             <div class="new-comment hide">
-                
+                <partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() { PostId = Model.Id}" />
             </div>
         </div>
     </div>
 </article>
 
-<partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() { PostId = Model.Id}" />

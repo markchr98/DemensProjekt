@@ -10,7 +10,7 @@ namespace DemensProjekt.Models
     {
         public long Id { get; set; } 
         
-        public long PostId { get; set; }
+        public long PostId { get; set; }       
 
         public DateTime Posted { get; set; }
 

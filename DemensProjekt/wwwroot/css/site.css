@@ -286,7 +286,6 @@ input[type=text] {
 	
 }
 
-.NewsWrapper {
-	margin: 10px, 40px;
-	background-color: red;
+.NewsP {
+	padding: 30px;
 }
