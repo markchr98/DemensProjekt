@@ -61,8 +61,7 @@ namespace DemensProjekt.Controllers
             return RedirectToAction("Post", "Blog", new
             {
                 year = post.Posted.Year,
-                month = post.Posted.Month,
-                key = post.Key
+                month = post.Posted.Month                
             });
         }
     }
