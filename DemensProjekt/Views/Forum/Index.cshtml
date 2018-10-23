@@ -1,14 +1,15 @@
-﻿@model IEnumerable<DemensProjekt.Models.Post>
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model IEnumerable<DemensProjekt.Models.Post>
 
 @{
     ViewBag.Title = "Se og lav Indlæg";
-    Layout = "_Layout";
+    
 }
 
-<h1>Explorerer's Blog</h1>
+<h1>Opslag</h1>
 
 <p>
-    Below are a few of the latest posts from some of our explorerers
+    Seneste Opslag
 </p>
 
 <p class="pager">
