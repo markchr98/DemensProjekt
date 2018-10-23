@@ -39,8 +39,8 @@ namespace DemensProjekt
                 var connectionString = @"Server = den1.mssql3.gear.host; Database = demensprojekt18; User Id = demensprojekt18; Password = Ky370-3zH~tD; ";
                 options.UseSqlServer(connectionString);
             });
-
-            services.AddDbContext<BlogDataContext>(options =>
+        
+            services.AddDbContext<ForumDataContext>(options =>
             {
                 //enter connection string (use configuration.GetConnectionString at some point (see lynda))
                 var connectionString = @"Server = den1.mssql3.gear.host; Database = demensprojekt18; User Id = demensprojekt18; Password = Ky370-3zH~tD; ";
