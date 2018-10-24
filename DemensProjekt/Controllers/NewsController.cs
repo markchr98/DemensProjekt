@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemensProjekt.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemensProjekt.Controllers
@@ -18,10 +19,15 @@ namespace DemensProjekt.Controllers
         [Route("{year:int}/{month:range(1,12)}/{key}")]
         public IActionResult News(int year, int month, string key)
         {
-            return new ContentResult
+            var news = new News
             {
-                Content = string.Format("{0}  {1}  {2}", year, month, key)
+                newsTitle = "Gulerødder hjælper på demens",
+                newsBody = "Lang teskt",
+                newsDate = DateTime.Now
+
             };
+
+            return View(news);
         }
     }
 }
