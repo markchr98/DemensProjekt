@@ -43,13 +43,13 @@ namespace DemensProjekt.Controllers
             return View(posts);
         }
 
-        [HttpGet, Route("create")]
+        [HttpGet, Route("createPost")]
         public IActionResult CreatePost()
         {
             return View();
         }
 
-        [HttpPost, Route("create")]
+        [HttpPost, Route("createPost")]
         public IActionResult CreatePost(Post post)
         {
             if (!ModelState.IsValid)
@@ -69,13 +69,13 @@ namespace DemensProjekt.Controllers
             });
         }
 
-        [HttpGet, Route("create")]
+        [HttpGet, Route("createComment")]
         public IActionResult CreateComment()
         {
             return View();
         }
 
-        [HttpPost, Route("create")]
+        [HttpPost, Route("createComment")]
         public IActionResult CreateComment(Comment comment)
         {
             if (!ModelState.IsValid)
