@@ -21,7 +21,7 @@
     <Content Update="Views\Login\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\News\Index.cshtml">
+    <Content Update="Views\News\News.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Profile\Index.cshtml">
