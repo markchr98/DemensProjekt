@@ -9,6 +9,8 @@ namespace DemensProjekt.Models
 {
     public class Comment
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public long CommentId { get; set; }       
 
         public DateTime Posted { get; set; }
@@ -16,18 +18,9 @@ namespace DemensProjekt.Models
         public string Author { get; set; }
 
         [Required]
+        [MinLength(1)]
         public string Body { get; set; }
 
         public long PostId { get; set; }
-
-        
-        public Post Post { get; set; }
-
-        public Comment()
-        {
-            Post = new Post();
-        }
-    }
-
-    
+    }    
 }

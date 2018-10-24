@@ -9,8 +9,11 @@
 
 
     <div>
+
         <textarea asp-for="Body" class="form-control" placeholder="Skriv kommentar her..."></textarea>
+        <input type="hidden" asp-for="PostId" />        
         <span asp-validation-for="Body"></span>
+
     </div>
 
     <button type="submit">Opret Kommentar</button>
