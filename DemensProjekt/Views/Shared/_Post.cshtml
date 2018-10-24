@@ -29,7 +29,7 @@
             <a href="#" class="add-comment">Tilføj en kommentar</a>
             
             <div class="new-comment hide">
-                <partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() {Post = Model}" />
+                <partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() {PostId = Model.PostId, Post = Model}" />
             </div>
         </div>
     </div>
