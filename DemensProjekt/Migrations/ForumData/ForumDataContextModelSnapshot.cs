@@ -21,7 +21,7 @@ namespace DemensProjekt.Migrations.ForumData
 
             modelBuilder.Entity("DemensProjekt.Models.Comment", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long>("CommentId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -34,14 +34,16 @@ namespace DemensProjekt.Migrations.ForumData
 
                     b.Property<DateTime>("Posted");
 
-                    b.HasKey("Id");
+                    b.HasKey("CommentId");
+
+                    b.HasIndex("PostId");
 
                     b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("DemensProjekt.Models.Post", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long>("PostId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -56,9 +58,17 @@ namespace DemensProjekt.Migrations.ForumData
                         .IsRequired()
                         .HasMaxLength(20);
 
-                    b.HasKey("Id");
+                    b.HasKey("PostId");
 
                     b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("DemensProjekt.Models.Comment", b =>
+                {
+                    b.HasOne("DemensProjekt.Models.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

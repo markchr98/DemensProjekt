@@ -93,5 +93,7 @@ namespace DemensProjekt.Controllers
                 month = comment.Posted.Month
             });
         }
+
+       
     }
 }
