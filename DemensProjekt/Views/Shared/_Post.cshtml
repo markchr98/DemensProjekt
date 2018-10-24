@@ -19,13 +19,17 @@
     <div class="comments-container hide">
         <h3>Kommentarer</h3>
         <div class="comments">
+            @foreach(DemensProjekt.Models.Comment comment in Model.Comments)
+            {
+                <partial name="_Comment" model="comment" />
+            }
         </div>
         <hr />
         <div>
             <a href="#" class="add-comment">Tilføj en kommentar</a>
             
             <div class="new-comment hide">
-                <partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() { PostId = Model.Id}" />
+                <partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() {Post = Model}" />
             </div>
         </div>
     </div>

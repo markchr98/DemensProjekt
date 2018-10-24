@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace DemensProjekt.Models
 {
     public class Post
     {        
-        public long Id { get; set; }
+        public long PostId { get; set; }
 
         [Display(Name = "Titel")]
         [Required]
@@ -26,6 +27,14 @@ namespace DemensProjekt.Models
             ErrorMessage = "Dit opslag skal mindst være 1 karakter lang")]
         public string Body { get; set; }
 
-        public DateTime Posted { get; set; }
+        public DateTime Posted { get; set; }        
+
+        [ForeignKey("PostId")]
+        public ICollection<Comment> Comments { get; set; }     
+
+        public Post()
+        {
+            this.Comments = new List<Comment>();
+        }
     }
 }

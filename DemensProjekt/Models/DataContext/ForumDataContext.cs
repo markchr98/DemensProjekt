@@ -14,6 +14,10 @@ namespace DemensProjekt.Models
         public ForumDataContext(DbContextOptions<ForumDataContext> options) : base(options)
         {
             Database.EnsureCreated();
+            
         }
+
+        
+     
     }
 }
