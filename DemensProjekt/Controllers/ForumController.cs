@@ -19,22 +19,22 @@ namespace DemensProjekt.Controllers
         [Route("")]
         public IActionResult Index(int page = 0)
         {
-            var pageSize = 2;
-            var totalPosts = _db.Posts.Count();
-            var totalPages = totalPosts / pageSize;
-            var previousPage = page - 1;
-            var nextPage = page + 1;
+            //var pageSize = 2;
+            //var totalPosts = _db.Posts.Count();
+            //var totalPages = totalPosts / pageSize;
+            //var previousPage = page - 1;
+            //var nextPage = page + 1;
 
-            ViewBag.PreviousPage = previousPage;
-            ViewBag.HasPreviousPage = previousPage >= 0;
-            ViewBag.NextPage = nextPage;
-            ViewBag.HasNextPage = nextPage < totalPages;
+            //ViewBag.PreviousPage = previousPage;
+            //ViewBag.HasPreviousPage = previousPage >= 0;
+            //ViewBag.NextPage = nextPage;
+            //ViewBag.HasNextPage = nextPage < totalPages;
 
             var posts =
                 _db.Posts
                     .OrderByDescending(x => x.Posted)
-                    .Skip(pageSize * page)
-                    .Take(pageSize)
+                    //.Skip(pageSize * page)
+                    //.Take(pageSize)
                     .ToArray();
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
@@ -43,17 +43,17 @@ namespace DemensProjekt.Controllers
             return View(posts);
         }
 
-        [HttpGet, Route("createPost")]
+        [HttpGet, Route("CreatePost")]
         public IActionResult CreatePost()
         {
             return View();
         }
 
-        [HttpPost, Route("createPost")]
+        [HttpPost, Route("CreatePost")]
         public IActionResult CreatePost(Post post)
         {
             if (!ModelState.IsValid)
-                return View();
+                return View("Index");
 
             post.Author = User.Identity.Name;
             post.Posted = DateTime.Now;
@@ -62,20 +62,16 @@ namespace DemensProjekt.Controllers
             _db.Posts.Add(post);
             _db.SaveChanges();
 
-            return RedirectToAction("Index", "Forum", new
-            {
-                year = post.Posted.Year,
-                month = post.Posted.Month        
-            });
+            return RedirectToAction("Index", "Forum");
         }
 
-        [HttpGet, Route("createComment")]
+        [HttpGet, Route("CreateComment")]
         public IActionResult CreateComment()
         {
             return View();
         }
 
-        [HttpPost, Route("createComment")]
+        [HttpPost, Route("CreateComment")]
         public IActionResult CreateComment(Comment comment)
         {
             if (!ModelState.IsValid)
