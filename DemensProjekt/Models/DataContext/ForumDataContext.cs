@@ -17,6 +17,11 @@ namespace DemensProjekt.Models
             
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Post>().HasMany(b => b.Comments).WithOne(p => p.Post);
+        }
+
         
      
     }

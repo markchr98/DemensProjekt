@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DemensProjekt.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemensProjekt.Controllers
 {
@@ -32,7 +33,7 @@ namespace DemensProjekt.Controllers
 
             var posts =
                 _db.Posts
-                    .OrderByDescending(x => x.Posted)
+                    .Include(p => p.Comments).OrderByDescending(p => p.Posted)
                     //.Skip(pageSize * page)
                     //.Take(pageSize)
                     .ToArray();
