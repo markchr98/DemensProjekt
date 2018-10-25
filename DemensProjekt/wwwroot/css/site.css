@@ -291,5 +291,13 @@ input[type=text] {
 }
 
 .NewsArticle {
-	padding: 20px;
+	margin-left: 20px;
+	margin-right: 30px;
 }
+
+.NewsArticle h2 {
+	font-size: 25px;
+}
+
+
+
