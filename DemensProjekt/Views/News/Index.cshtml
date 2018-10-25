@@ -1,4 +1,4 @@
-﻿@model DemensProjekt.Models.News
+﻿@model IEnumerable<DemensProjekt.Models.News>
 @{
 	ViewBag.Title = "Se nyheder om demens";
 
@@ -8,5 +8,8 @@
 <hr class="HorizontalLine" />
 
 <div class="NewsPosts">
-	@Html.Partial("_News")
+	@foreach (var news in Model)
+	{
+	@Html.Partial("_News", news)
+	}
 </div>
