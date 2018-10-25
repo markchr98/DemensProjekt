@@ -80,14 +80,14 @@ namespace DemensProjekt.Controllers
             comment.Author = User.Identity.Name;
             comment.Posted = DateTime.Now;
 
+            Console.WriteLine(comment);
+
+            //comment.Post = _db.Find(x => x.Id = comment.PostId); for future 
+
             _db.Comments.Add(comment);
             _db.SaveChanges();
 
-            return RedirectToAction("Index", "Forum", new
-            {
-                year = comment.Posted.Year,
-                month = comment.Posted.Month
-            });
+            return RedirectToAction("Index", "Forum");
         }
 
        
