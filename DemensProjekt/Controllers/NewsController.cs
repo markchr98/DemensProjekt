@@ -13,7 +13,14 @@ namespace DemensProjekt.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            return View();
+            var news = new News
+            {
+                newsTitle = "Gulerødder hjælper på demens",
+                newsBody = "Lang teskt",
+                newsDate = DateTime.Now
+
+            };
+            return View(news);
         }
 
         [Route("{year:int}/{month:range(1,12)}/{key}")]
