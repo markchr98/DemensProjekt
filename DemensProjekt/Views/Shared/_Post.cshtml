@@ -7,7 +7,7 @@
 }
 
 <article class="forum-post">
-    @*<h1>@Html.ActionLink(Model.Title, "Post", "Forum", new { year = Model.Posted.Year, month = Model.Posted.Month })</h1>*@
+    <h2>@Model.Title</h2>
     <div class="details">
         Posted <span>@Format.AsReadableDate(Model.Posted)</span> by <span>@Model.Author</span>
     </div>
@@ -15,13 +15,14 @@
         @Model.Body
     </div>
 
-    <a href="#" class="show-comments">Vis Kommentarer</a>
-    <div class="comments-container hide">
+    @*<a href="#" class="show-comments">Vis Kommentarer</a>
+    <div class="comments-container hide">*@
         <h3>Kommentarer</h3>
         <div class="comments">
-            @foreach(DemensProjekt.Models.Comment comment in Model.Comments)
+            @foreach(var comment in Model.Comments)
             {
-                <partial name="_Comment" model="comment" />
+                <hr>
+                <p>@comment.Body</p>
             }
         </div>
         <hr />
@@ -29,9 +30,9 @@
             <a href="#" class="add-comment">Tilføj en kommentar</a>
             
             <div class="new-comment hide">
-                <partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() {PostId = Model.PostId, Post = Model}" />
+                <partial name="_CreateComment" model="@new DemensProjekt.Models.Comment() {PostId = Model.PostId}" />
             </div>
         </div>
-    </div>
+    @*</div>*@
 </article>
 
