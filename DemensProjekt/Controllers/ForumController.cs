@@ -92,12 +92,6 @@ namespace DemensProjekt.Controllers
         }
 
         [HttpPut, Route("UpdateComment")]
-        public IActionResult UpdateComment()
-        {
-            return View();
-        }
-
-        [HttpPut, Route("UpdateComment")]
         public IActionResult UpdateComment(long id, [FromBody]Comment updated)
         {
             var comment = _db.Comments.FirstOrDefault(x => x.CommentId == id);
@@ -112,16 +106,10 @@ namespace DemensProjekt.Controllers
             return Ok();
         }
 
-        [HttpDelete, Route("DeleteComment")]
-        public IActionResult DeleteComment()
+        [Route("DeleteComment")]
+        public IActionResult DeleteComment(long commentId)
         {
-            return View();
-        }
-
-        [HttpDelete, Route("DeleteComment")]
-        public void DeleteComment(long id)
-        {
-            var comment = _db.Comments.FirstOrDefault(x => x.CommentId == id);
+            var comment = _db.Comments.FirstOrDefault(x => x.CommentId == commentId);
             
             if(comment != null)
             {
@@ -129,7 +117,21 @@ namespace DemensProjekt.Controllers
                 _db.SaveChanges();
             }
 
-            RedirectToAction("Index", "Forum");
+            return RedirectToAction("Index", "Forum");
+        }
+
+        [Route("DeletePost")]
+        public IActionResult DeletePost(long postId)
+        {
+            var post = _db.Posts.FirstOrDefault(x => x.PostId == postId);
+
+            if (post != null)
+            {
+                _db.Posts.Remove(post);
+                _db.SaveChanges();
+            }
+
+            return RedirectToAction("Index", "Forum");
         }
     }
 }

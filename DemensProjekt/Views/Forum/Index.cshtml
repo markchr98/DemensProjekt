@@ -33,6 +33,10 @@
 <div class="blog-posts">
     @foreach (var post in Model)
     {
-        <partial name="_Post" model="@post"/>
+        <partial name="_Post" model="@post" />
+        <form asp-action="DeletePost" asp-controller="Forum">
+            <input type="hidden" name="postId" value="@post.PostId" />
+            <input type="submit" value="Slet Opslag" />
+        </form>
     }
 </div>

@@ -23,9 +23,15 @@
             {
                 <hr>
                 <p>@comment.Body</p>
-                <a href="@Url.Action("UpdateComment", "Forum")">Rediger kommentar</a>
-                <a href="@Url.Action("DeleteComment", "Forum")">Slet kommentar</a>
-            }
+                <form asp-action="UpdateComment" asp-controller="Forum" >
+                    <input type="hidden" name="commentId" value="@comment.CommentId"/>
+                    <input type="submit" value="Rediger Kommentar"/>                  
+                </form>
+                <form asp-action="DeleteComment" asp-controller="Forum" >
+                    <input type="hidden" name="commentId" value="@comment.CommentId"/>
+                    <input type="submit" value="Slet Kommentar"/>                  
+                </form>
+           }
         </div>
         <hr />
         <div>
