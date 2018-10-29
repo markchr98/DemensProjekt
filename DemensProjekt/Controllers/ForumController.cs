@@ -91,6 +91,45 @@ namespace DemensProjekt.Controllers
             return RedirectToAction("Index", "Forum");
         }
 
-       
+        [HttpPut, Route("UpdateComment")]
+        public IActionResult UpdateComment()
+        {
+            return View();
+        }
+
+        [HttpPut, Route("UpdateComment")]
+        public IActionResult UpdateComment(long id, [FromBody]Comment updated)
+        {
+            var comment = _db.Comments.FirstOrDefault(x => x.CommentId == id);
+
+            if (comment == null)
+                return NotFound();
+
+            comment.Body = updated.Body;
+
+            _db.SaveChanges();
+
+            return Ok();
+        }
+
+        [HttpDelete, Route("DeleteComment")]
+        public IActionResult DeleteComment()
+        {
+            return View();
+        }
+
+        [HttpDelete, Route("DeleteComment")]
+        public void DeleteComment(long id)
+        {
+            var comment = _db.Comments.FirstOrDefault(x => x.CommentId == id);
+            
+            if(comment != null)
+            {
+                _db.Comments.Remove(comment);
+                _db.SaveChanges();
+            }
+
+            RedirectToAction("Index", "Forum");
+        }
     }
 }
