@@ -157,10 +157,10 @@ input, select {
 }
 
 /* Add a color to the active/current link */
-    .topnav a.active {
+    /*.topnav a.active {
         background-color: #115586;
         color: white;
-    }
+    }*/
 
 .coloumn {
     float: left;
@@ -298,6 +298,4 @@ input[type=text] {
 .NewsArticle h2 {
 	font-size: 25px;
 }
-
-
 
