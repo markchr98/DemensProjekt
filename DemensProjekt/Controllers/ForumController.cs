@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DemensProjekt.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DemensProjekt.Controllers
 {
+    [Authorize]
     [Route("forum")]
     public class ForumController : Controller
     {
@@ -17,7 +19,7 @@ namespace DemensProjekt.Controllers
             _db = db;
         }
 
-        [Route("")]
+                [Route("")]
         public IActionResult Index(int page = 0)
         {
             //var pageSize = 2;
